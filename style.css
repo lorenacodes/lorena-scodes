@@ -1,0 +1,356 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fdfdfd;
+  color: #111;
+  padding-bottom: 40px;
+}
+
+/* Header com logo e navegação */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo span {
+  color: #e340ec;
+  margin-left: 4px;
+}
+
+.emblema {
+  width: 22px;
+  height: 22px;
+  background-color: #d946ef;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #111;
+  font-size: 0.95rem;
+}
+
+.pesquisa input {
+  border: 1px solid #d946ef;
+  border-radius: 6px;
+  padding: 6px 10px;
+  outline: none;
+}
+
+/* Hero principal com título e botões */
+.hero {
+  background: linear-gradient(-45deg, #00c3f9, #06b6d4, #3b82f6, #00c3f9);
+  background-size: 400% 400%;
+  animation: moverFundo 16s ease infinite;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+  background: linear-gradient(-45deg, #00c3f9, #d946ef, #ec4899, #00c3f9);
+  background-size: 400% 400%;
+  animation: fundoDegrade 12s ease infinite;
+  padding: 60px 40px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  /* NOVOS ESTILOS */
+  margin: 25px auto;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 20px;
+}
+
+/* Animação de degradê suave */
+@keyframes fundoDegrade {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero .btn {
+  background-color: #00aaff; /* azul sólido, vibrante e profissional */
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 170, 255, 0.3);
+  margin: 10px;
+}
+
+.hero .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 170, 255, 0.5);
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 32px;
+}
+
+/* Seção geral */
+.destaques {
+  padding: 20px 30px; /* reduz espaço acima e nas laterais */
+  background-color: white;
+  text-align: center;
+  margin-top: -20px; /* aproxima do topo */
+}
+
+.destaques h2 {
+  font-size: 28px;
+  color: #003366;
+  margin-bottom: 24px;
+}
+
+/* Container dos cards */
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+}
+
+/* Estilo dos cards */
+.card {
+  flex: 1 1 calc(33.333% - 16px); /* 3 por linha com gap de 16px */
+  min-width: 280px;
+  max-width: 400px;
+  background-color: #007BFF; /* azul forte */
+  color: white;
+  height: 180px;
+  border-radius: 6px; /* borda levemente arredondada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Conteúdo interno dos cards */
+.card-content {
+  padding: 20px;
+}
+
+/* Botão Ver mais */
+.ver-mais {
+  background-color: #0056b3;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ver-mais:hover {
+  background-color: #003d80;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .pesquisa {
+    margin-top: 10px;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Para telas pequenas, mostrar menu-toggle e esconder nav */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  nav.ativo {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.sobre-mim {
+  background-color: #ede7f6; /* roxo bem claro, elegante */
+  border-radius: 20px;
+  padding: 40px 60px;
+  margin: 40px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  color: #333;
+}
+
+.sobre-mim h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #512da8; /* roxo mais escuro e sofisticado */
+}
+
+.sobre-mim .resumo {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.mais-texto {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.ler-mais-btn {
+  background: none;
+  border: none;
+  color: #512da8;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 12px;
+  transition: color 0.3s;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.ler-mais-btn:hover {
+  color: #311b92;
+  text-decoration: underline;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.projetos-section {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.projetos-section h2 {
+  color: #003366;
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Grade dos projetos */
+.projetos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Retângulos finos, claros e modernos */
+.projeto-card {
+  background-color: #f2f9ff; /* azul bem clarinho */
+  padding: 14px 20px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #003366;
+  box-shadow: 0 2px 6px rgba(0, 102, 204, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.projeto-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  text-align: left;
+}
+
+.projeto-card a {
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.projeto-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 102, 204, 0.2);
+}
+
+.projeto-card a:hover {
+  background-color: #0056b3;
+}
